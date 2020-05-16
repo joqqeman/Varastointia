@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Muutoshistoria {
+    
+    private ArrayList<Double> muutoshistoria;
+    
+    public Muutoshistoria() {
+        this.muutoshistoria = new ArrayList<>();
+    }
+    
+    public void lisaa(double tilanne) {
+        this.muutoshistoria.add(tilanne);
+    }
+    
+    public void nollaa() {
+        this.muutoshistoria.clear();
+    }
+    
+    public String toString() {
+        return this.muutoshistoria.toString();
+    }
+    
+    public double maxArvo() {
+       return Collections.max(this.muutoshistoria);
+    }
+    
+    public double minArvo() {
+        return Collections.min(this.muutoshistoria);
+    }
+    
+    public double keskiarvo() {
+        double yhteensa = 0;
+        for (Double luku : this.muutoshistoria) {
+            yhteensa = yhteensa + luku;
+        }
+        return (yhteensa / this.muutoshistoria.size());
+    }
+    
+}
