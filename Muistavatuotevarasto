@@ -1,0 +1,29 @@
+
+public class MuistavaTuotevarasto extends Tuotevarasto {
+
+
+    private Muutoshistoria muutoshistoria;
+    
+    public MuistavaTuotevarasto(String tuotenimi, double tilavuus, double alkuSaldo) {
+        super(tuotenimi, tilavuus);
+            this.muutoshistoria = new Muutoshistoria();
+        this.muutoshistoria.lisaa(alkuSaldo);
+    }
+    
+    public String historia() {
+        return this.muutoshistoria.toString();
+    }
+    
+    public void lisaaVarastoon(double maara) {
+        super.lisaaVarastoon(maara);
+        this.muutoshistoria.lisaa(super.getSaldo());
+    }
+    
+    public double otaVarastosta(double maara) {
+        super.otaVarastosta(maara);
+        this.muutoshistoria.lisaa(super.getSaldo());
+        return maara;
+    }
+    
+    
+}
