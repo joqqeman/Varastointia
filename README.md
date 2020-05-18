@@ -154,3 +154,26 @@ Historia: [1000.0, 988.7, 989.7]
 Suurin tuotemäärä: 1000.0
 Pienin tuotemäärä: 988.7
 Keskiarvo: 992.8
+
+
+Olen jumissa osassa 5/6. Ensimmäinen ongelma: "Asetathan varaston alkusaldon kun kutsut MuistavaTuotevarasto-konstruktoria? expected:<5.0> but was:<0.0>"
+
+Toinen ongelma: 
+
+public class Main {
+
+    public static void main(String[] args) {
+MuistavaTuotevarasto mehu = new MuistavaTuotevarasto("Juice", 1000.0, 1000.0);
+mehu.otaVarastosta(11.3);
+System.out.println(mehu.getNimi()); // Juice
+mehu.lisaaVarastoon(1.0);
+System.out.println(mehu);           // Juice: saldo = 989.7, vielä tilaa 10.3
+System.out.println(mehu.historia());
+    }
+
+}
+Output: Juice
+Juice: saldo = 1.0, tilaa 999.0
+[1000.0, 0.0, 1.0]
+
+Eli menee aivan päin helvettiä :D
