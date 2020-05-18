@@ -11,7 +11,9 @@ public double otaVarastosta(double maara) - Otetaan varastosta pyydetty määrä
 public String toString() - Palauttaa olion tilan merkkijonoesityksenä tyyliin saldo = 64.5, tilaa 123.5
 Tehtävässä rakennetaan Varasto-luokasta useampia erilaisia varastoja.
 
-Tuotevarasto, vaihe 1
+OSA 1
+Tuotevarasto, 
+vaihe 1
 Luokka Varasto hallitsee tuotteen määrään liittyvät toiminnot. Nyt tuotteelle halutaan lisäksi tuotenimi ja nimen käsittelyvälineet. Ohjelmoidaan Tuotevarasto Varaston aliluokaksi! Toteutetaan ensin pelkkä yksityinen oliomuuttuja tuotenimelle, konstruktori ja getteri nimikentälle:
 
 public Tuotevarasto(String tuotenimi, double tilavuus) - Luo tyhjän tuotevaraston. Tuotteen nimi ja varaston tilavuus annetaan parametrina.
@@ -29,7 +31,10 @@ Esimerkkitulostus
 
 Juice
 saldo = 988.7, vielä tilaa 11.3
-Tuotevarasto, vaihe 2
+
+OSA 2
+Tuotevarasto, 
+vaihe 2
 Kuten edellisestä esimerkistä näkee, Tuotevarasto-olion perimä toString() ei tiedä (tietenkään!) mitään tuotteen nimestä. Asialle on tehtävä jotain! Lisätään samalla myös setteri tuotenimelle:
 
 public void setNimi(String uusiNimi) - asettaa tuotteelle uuden nimen.
@@ -50,6 +55,7 @@ Esimerkkitulostus
 Juice
 Juice: saldo = 989.7, tilaa 10.299999999999955
 
+OSA 3
 Muutoshistoria
 Toisinaan saattaa olla kiinnostavaa tietää, millä tavoin jonkin tuotteen varastotilanne muuttuu: onko varasto usein hyvin vajaa, ollaanko usein ylärajalla, onko vaihelu suurta vai pientä, jne. Varustetaan siksi Tuotevarasto-luokka taidolla muistaa tuotteen määrän muutoshistoriaa.
 
@@ -63,6 +69,8 @@ public Muutoshistoria() luo tyhjän Muutoshistoria-olion.
 public void lisaa(double tilanne) lisää muutoshistorian viimeisimmäksi muistettavaksi määräksi parametrina annetun tilanteen.
 public void nollaa() tyhjää muistin.
 public String toString() palauttaa muutoshistorian merkkijonoesityksen. ArrayList-luokan antama merkkijonoesitys kelpaa sellaisenaan.
+
+OSA 4
 Muutoshistoria, vaihe 2
 Täydennä Muutoshistoria-luokkaa analyysimetodein:
 
@@ -71,6 +79,7 @@ public double minArvo() palauttaa muutoshistorian pienimmän arvon. Jos historia
 public double keskiarvo() palauttaa muutoshistorian arvojen keskiarvon. Jos historia on tyhjä, metodi palauttaa nollan.
 Metodien ei tule muokata sisäisen listan järjestystä.
 
+OSA 5
 Muistava tuotevarasto, vaihe 1
 Toteuta luokan Tuotevarasto aliluokkana MuistavaTuotevarasto. Uusi versio tarjoaa vanhojen lisäksi varastotilanteen muutoshistoriaan liittyviä palveluita. Historiaa hallitaan Muutoshistoria-oliolla.
 
@@ -99,6 +108,8 @@ Esimerkkitulostus
 Juice
 Juice: saldo = 989.7, vielä tilaa 10.299999999999955
 [1000.0]
+
+OSA 6
 Muistava tuotevarasto, vaihe 2
 On aika aloittaa historia! Ensimmäinen versio ei historiasta tiennyt kuin alkupisteen. Täydennä luokkaa metodein
 
@@ -124,6 +135,7 @@ Juice: saldo = 989.7, vielä tilaa 10.299999999999955
 [1000.0, 988.7, 989.7]
 Muista miten korvaava metodi voi käyttää hyväkseen korvattua metodia!
 
+OSA 7
 Muistava tuotevarasto, vaihe 3
 Täydennä luokkaa metodilla
 
